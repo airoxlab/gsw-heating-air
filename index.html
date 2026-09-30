@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GSW Heating and Air — licensed C-20 HVAC contractor serving Nice and Lake County, CA. Heating, air conditioning, installation, repair, maintenance and energy audits. Open 24 hours. Free estimates. CSLB #1122268, bonded and insured. Call (707) 267-3690.">
+<title>GSW Heating and Air</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --sky: #F5F8FA;
+    --sky-deep: #E7EEF3;
+    --navy: #14395C;
+    --navy-deep: #0C2740;
+    --flame: #C8372B;
+    --flame-soft: #E05446;
+    --chill: #2C87C4;
+    --ink: #1B2430;
+    --ink-soft: #5D6B7A;
+    --line: #D8E2EA;
+    --card: #FFFFFF;
+    --img-bg: #E2EAF1;
+    --on-dark: #EEF4F8;
+    --on-accent: #FFFFFF;
+    --display: "Manrope", "Segoe UI", Arial, sans-serif;
+    --body: "Inter", "Segoe UI", Arial, sans-serif;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --sky: #12171C;
+      --sky-deep: #0C1116;
+      --navy: #7FB2DC;
+      --navy-deep: #A8CDEB;
+      --flame: #E8695B;
+      --flame-soft: #C8372B;
+      --chill: #5FA9D8;
+      --ink: #E6ECF2;
+      --ink-soft: #97A5B4;
+      --line: #263039;
+      --card: #181F26;
+      --img-bg: #212A33;
+      --on-dark: #0C1116;
+      --on-accent: #0C1116;
+    }
+  }
+  :root[data-theme="dark"] {
+    --sky: #12171C;
+    --sky-deep: #0C1116;
+    --navy: #7FB2DC;
+    --navy-deep: #A8CDEB;
+    --flame: #E8695B;
+    --flame-soft: #C8372B;
+    --chill: #5FA9D8;
+    --ink: #E6ECF2;
+    --ink-soft: #97A5B4;
+    --line: #263039;
+    --card: #181F26;
+    --img-bg: #212A33;
+    --on-dark: #0C1116;
+    --on-accent: #0C1116;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0; background: var(--sky); color: var(--ink);
+    font-family: var(--body); font-size: 1.0625rem; line-height: 1.65;
+  }
+  a { color: var(--chill); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--chill); outline-offset: 3px; border-radius: 2px; }
+  img, svg { max-width: 100%; display: block; }
+
+  .wrap { max-width: 70rem; margin: 0 auto; padding: 0 1.25rem; }
+  .eyebrow {
+    font-weight: 700; font-size: 0.75rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--flame); margin: 0 0 0.8rem;
+  }
+  h1, h2, h3 { font-family: var(--display); font-weight: 800; color: var(--navy-deep); text-wrap: balance; margin: 0; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(1.85rem, 4.5vw, 2.5rem); line-height: 1.1; }
+  h3 { font-size: 1.14rem; font-weight: 700; }
+  p { margin: 0; }
+  section { padding: 4.25rem 0; scroll-margin-top: 4.5rem; }
+  .prose { max-width: 40em; }
+  .prose p + p { margin-top: 1rem; }
+  .section-intro { max-width: 44em; margin-top: 1rem; color: var(--ink-soft); }
+
+  /* Header */
+  .site-head {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--sky) 93%, transparent);
+    backdrop-filter: blur(9px); border-bottom: 1px solid var(--line);
+  }
+  header.site { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.6rem 0; }
+  .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+  .brand img { height: 62px; width: auto; border-radius: 0.3rem; }
+  nav.top { display: none; gap: 1.3rem; }
+  nav.top a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.94rem; }
+  nav.top a:hover { color: var(--flame); }
+  .call-btn {
+    display: inline-block; background: var(--flame); color: var(--on-accent);
+    text-decoration: none; font-weight: 700; font-size: 0.92rem;
+    padding: 0.55rem 1.2rem; border-radius: 0.4rem; white-space: nowrap;
+  }
+  .call-btn:hover { background: var(--navy); }
+  @media (min-width: 940px) { nav.top { display: flex; } }
+  @media (max-width: 560px) { .brand img { height: 48px; } }
+
+  /* Hero */
+  .hero { padding: 3.2rem 0 3.6rem; position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: -25% -10% auto 42%; height: 85%;
+    background: radial-gradient(ellipse at center, color-mix(in srgb, var(--chill) 16%, transparent), transparent 66%);
+    pointer-events: none;
+  }
+  .hero-grid { display: grid; gap: 2.4rem; align-items: center; position: relative; }
+  @media (min-width: 860px) { .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 3rem; } }
+  .pills { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 1.15rem; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+    padding: 0.32rem 0.95rem; font-weight: 600; font-size: 0.83rem; color: var(--navy);
+  }
+  .pill.open::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #2F9E5F; }
+  .hero h1 { font-size: clamp(2.1rem, 5.6vw, 3.1rem); line-height: 1.06; }
+  .hero h1 .hot { color: var(--flame); }
+  .hero h1 .cool { color: var(--chill); }
+  .hero .lede { margin-top: 1.15rem; font-size: 1.13rem; max-width: 34em; color: var(--ink-soft); }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.8rem; }
+  .btn {
+    display: inline-block; text-decoration: none; font-family: var(--display);
+    font-weight: 700; font-size: 1rem; padding: 0.85rem 1.6rem; border-radius: 0.4rem;
+  }
+  .btn-solid { background: var(--flame); color: var(--on-accent); }
+  .btn-solid:hover { background: var(--flame-soft); }
+  .btn-ghost { border: 2px solid var(--navy); color: var(--navy); }
+  .btn-ghost:hover { border-color: var(--flame); color: var(--flame); }
+  .hero-note { margin-top: 1.3rem; font-size: 0.92rem; color: var(--ink-soft); }
+  .hero-photo { margin: 0; border-radius: 0.8rem; overflow: hidden; border: 1px solid var(--line); background: var(--img-bg); }
+  .hero-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+  /* Strip */
+  .strip { background: var(--navy-deep); padding: 2rem 0; }
+  .strip-grid { display: grid; gap: 1.4rem; grid-template-columns: repeat(2, 1fr); text-align: center; }
+  @media (min-width: 780px) { .strip-grid { grid-template-columns: repeat(4, 1fr); } }
+  .strip-grid .n { font-family: var(--display); font-weight: 800; font-size: clamp(1.15rem, 2.8vw, 1.6rem); color: #F0B4AC; line-height: 1.12; }
+  .strip-grid .l { margin-top: 0.3rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-dark); opacity: 0.85; }
+  :root[data-theme="dark"] .strip { background: var(--card); }
+  :root[data-theme="dark"] .strip-grid .l { color: var(--ink); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .strip { background: var(--card); }
+    :root:not([data-theme="light"]) .strip-grid .l { color: var(--ink); }
+  }
+
+  /* Services */
+  .svc-grid { display: grid; gap: 1.2rem; margin-top: 2.4rem; }
+  @media (min-width: 640px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } }
+  .svc { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--chill); border-radius: 0.6rem; padding: 1.6rem 1.45rem; }
+  .svc .ico { color: var(--chill); margin-bottom: 0.85rem; }
+  .svc p { margin-top: 0.5rem; font-size: 0.94rem; color: var(--ink-soft); }
+  .verified {
+    margin-top: 1.8rem; font-size: 0.88rem; color: var(--ink-soft);
+    display: flex; align-items: center; gap: 0.5rem; justify-content: center;
+  }
+
+  /* Emergency */
+  .emergency {
+    margin-top: 2rem; background: var(--card); border: 1px solid var(--line);
+    border-left: 5px solid var(--flame); border-radius: 0.6rem; padding: 1.6rem 1.7rem;
+    display: grid; gap: 1rem; align-items: center;
+  }
+  @media (min-width: 760px) { .emergency { grid-template-columns: 1fr auto; } }
+  .emergency h3 { color: var(--flame); font-size: 1.18rem; }
+  .emergency p { margin-top: 0.4rem; font-size: 0.96rem; color: var(--ink-soft); }
+
+  /* Process */
+  .process { background: var(--sky-deep); }
+  .steps { display: grid; gap: 1.2rem; margin-top: 2.4rem; }
+  @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+  .step { background: var(--card); border: 1px solid var(--line); border-radius: 0.6rem; padding: 1.55rem 1.4rem; }
+  .step .n { font-family: var(--display); font-weight: 800; font-size: 1.5rem; color: var(--flame); line-height: 1; }
+  .step h3 { margin-top: 0.5rem; font-size: 1.05rem; }
+  .step p { margin-top: 0.45rem; font-size: 0.93rem; color: var(--ink-soft); }
+
+  /* Work */
+  .work-grid { display: grid; gap: 1rem; margin-top: 2.4rem; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 820px) { .work-grid { grid-template-columns: repeat(3, 1fr); } }
+  .shot { margin: 0; border: 1px solid var(--line); border-radius: 0.6rem; overflow: hidden; background: var(--card); }
+  .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--img-bg); }
+  .shot figcaption { padding: 0.75rem 1rem; font-size: 0.86rem; color: var(--ink-soft); font-weight: 500; }
+  .fine { margin-top: 1.3rem; font-size: 0.85rem; color: var(--ink-soft); }
+
+  /* Licensed */
+  .licensed { background: var(--sky-deep); }
+  .lic-wrap { display: grid; gap: 1.8rem; margin-top: 2.3rem; align-items: center; }
+  @media (min-width: 820px) { .lic-wrap { grid-template-columns: minmax(0, 300px) 1fr; gap: 2.6rem; } }
+  .lic-card { background: var(--card); border: 1px solid var(--line); border-radius: 0.8rem; padding: 1.8rem 1.6rem; text-align: center; }
+  .lic-card img { width: 160px; margin: 0 auto 1rem; }
+  .lic-card .num { font-family: var(--display); font-weight: 800; font-size: 1.6rem; color: var(--navy); line-height: 1; font-variant-numeric: tabular-nums; }
+  .lic-card .lbl { margin-top: 0.4rem; font-weight: 600; font-size: 0.92rem; }
+  .lic-card .sub { margin-top: 0.4rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .lic-card a { display: inline-block; margin-top: 0.85rem; font-size: 0.88rem; font-weight: 600; }
+  .checks { margin: 1.2rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.65rem; }
+  .checks li { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.97rem; }
+  .checks svg { flex: none; color: var(--chill); margin-top: 3px; }
+
+  /* Areas + hours */
+  .info-grid { display: grid; gap: 2.4rem; }
+  @media (min-width: 860px) { .info-grid { grid-template-columns: 1.2fr 1fr; align-items: start; gap: 3.2rem; } }
+  .area-grid { display: grid; gap: 0.75rem; margin-top: 1.6rem; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 620px) { .area-grid { grid-template-columns: repeat(3, 1fr); } }
+  .area {
+    background: var(--card); border: 1px solid var(--line); border-radius: 0.5rem;
+    padding: 0.85rem 0.8rem; text-align: center; font-weight: 600; font-size: 0.92rem; color: var(--navy-deep);
+  }
+  .side-card { background: var(--card); border: 1px solid var(--line); border-radius: 0.6rem; padding: 1.5rem 1.4rem; }
+  .side-card + .side-card { margin-top: 1.1rem; }
+  .side-card h3 { font-size: 1.04rem; }
+  .side-card p { margin-top: 0.5rem; font-size: 0.94rem; color: var(--ink-soft); }
+  .always {
+    display: flex; align-items: center; gap: 0.6rem; margin-top: 0.8rem;
+    font-family: var(--display); font-weight: 800; font-size: 1.35rem; color: var(--navy);
+  }
+  .always span { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #2F9E5F; }
+  .pay { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.8rem; }
+  .pay span {
+    background: var(--sky); border: 1px solid var(--line); border-radius: 999px;
+    padding: 0.28rem 0.8rem; font-size: 0.84rem; font-weight: 600; color: var(--ink-soft);
+  }
+
+  /* Contact */
+  .contact-band { background: var(--navy-deep); text-align: center; }
+  .contact-band .eyebrow { color: #F0B4AC; }
+  .contact-band h2 { color: var(--on-dark); }
+  .contact-band .section-intro { color: var(--on-dark); opacity: 0.88; margin-inline: auto; }
+  .contact-band .hero-ctas { justify-content: center; }
+  .contact-band .btn-solid { background: var(--flame); color: #FFFFFF; }
+  .contact-band .btn-solid:hover { background: var(--on-dark); color: var(--navy-deep); }
+  .contact-band .btn-ghost { border-color: var(--on-dark); color: var(--on-dark); }
+  .contact-band .btn-ghost:hover { border-color: #F0B4AC; color: #F0B4AC; }
+  .contact-band .fine { margin-top: 1.5rem; font-size: 0.92rem; color: var(--on-dark); opacity: 0.85; }
+  :root[data-theme="dark"] .contact-band { background: var(--sky-deep); }
+  :root[data-theme="dark"] .contact-band h2,
+  :root[data-theme="dark"] .contact-band .section-intro,
+  :root[data-theme="dark"] .contact-band .fine { color: var(--ink); }
+  :root[data-theme="dark"] .contact-band .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .contact-band { background: var(--sky-deep); }
+    :root:not([data-theme="light"]) .contact-band h2,
+    :root:not([data-theme="light"]) .contact-band .section-intro,
+    :root:not([data-theme="light"]) .contact-band .fine { color: var(--ink); }
+    :root:not([data-theme="light"]) .contact-band .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  }
+
+  /* Footer */
+  footer.site {
+    background: var(--sky-deep); border-top: 1px solid var(--line);
+    color: var(--ink-soft); padding: 2.5rem 0; text-align: center; font-size: 0.9rem;
+  }
+  footer.site img { width: 130px; margin: 0 auto 0.9rem; }
+  footer.site p { margin-top: 0.3rem; }
+  footer.site a { color: inherit; }
+  footer.site .fineprint { font-size: 0.78rem; max-width: 52em; margin: 0.9rem auto 0; }
+</style>
+</head>
+<body>
+
+<div class="site-head">
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="#top" aria-label="GSW Heating and Air home">
+        <img src="img/logo.jpg" alt="GSW Heating and Air — licensed #1122268, bonded, established 2024">
+      </a>
+      <nav class="top" aria-label="Sections">
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#work">Our work</a>
+        <a href="#licensed">Licensed</a>
+        <a href="#areas">Areas &amp; hours</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="call-btn" href="tel:+17072673690">Call (707) 267-3690</a>
+    </header>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="pills">
+          <span class="pill open">Open 24 hours, 7 days</span>
+          <span class="pill">Free estimates</span>
+        </div>
+        <h1>No <span class="hot">heat</span>? No <span class="cool">cool</span>? We're here to help.</h1>
+        <p class="lede">GSW Heating and Air is a licensed C-20 HVAC contractor serving Nice and Lake County — installation, repair, maintenance and energy audits, any hour of the day or night. Free estimates on every job.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" href="tel:+17072673690">Call (707) 267-3690</a>
+          <a class="btn btn-ghost" href="#services">What we do</a>
+        </div>
+        <p class="hero-note">CSLB #1122268 &middot; bonded &amp; insured &middot; serving Lake County</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/unit-install.jpg" alt="HVAC unit installed and wired at a Lake County property">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 2. STRIP ============ -->
+  <div class="strip">
+    <div class="wrap strip-grid">
+      <div><div class="n">24 / 7</div><div class="l">Open every day</div></div>
+      <div><div class="n">Free</div><div class="l">Estimates</div></div>
+      <div><div class="n">#1122268</div><div class="l">CSLB licensed</div></div>
+      <div><div class="n">Bonded &amp; insured</div><div class="l">Workers' comp carried</div></div>
+    </div>
+  </div>
+
+  <!-- ============ 3. SERVICES ============ -->
+  <section id="services">
+    <div class="wrap">
+      <p class="eyebrow">What we do</p>
+      <h2>Heating and cooling, start to finish.</h2>
+      <p class="section-intro">A C-20 license covers the whole system — the furnace, the AC, the ducts between them, and the efficiency of the house around it.</p>
+      <div class="svc-grid">
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7S6.5 9.4 6.5 14a5.5 5.5 0 0 0 11 0c0-4.6-5.5-11.3-5.5-11.3z"/></svg></div>
+          <h3>Heating</h3>
+          <p>Furnaces, heat pumps and wall units — repaired or replaced before the cold sets in, and running safely when it does.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.5 5.5l13 13M18.5 5.5l-13 13"/></svg></div>
+          <h3>Air conditioning</h3>
+          <p>Central air, mini splits and window units. Lake County summers are no joke — we keep the cold air coming.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></svg></div>
+          <h3>Installation &amp; replacement</h3>
+          <p>New systems sized properly for the house — not whatever happens to be on the truck. Old unit hauled away.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 1-6 6L4 17v3h3l4.7-4.7a4.5 4.5 0 0 0 6-6l-2.5 2.5-2.1-2.1z"/></svg></div>
+          <h3>HVAC repair</h3>
+          <p>Diagnosed properly and fixed — not a parts-swap guess. You get the price before any work starts.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></svg></div>
+          <h3>System maintenance</h3>
+          <p>Seasonal servicing that catches the small faults before they become the 2 a.m. breakdown.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 3 4-6 5 4"/><path d="M3 21h18"/></svg></div>
+          <h3>Building energy audits</h3>
+          <p>Where the heat is escaping and the money with it. A clear picture before you spend on a new system.</p>
+        </div>
+      </div>
+      <p class="verified">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        Services verified by the business on Yelp
+      </p>
+      <div class="emergency">
+        <div>
+          <h3>Furnace out at midnight? AC dead in a heatwave?</h3>
+          <p>We're open 24 hours, every day of the week. Call and we'll tell you straight how soon we can be there.</p>
+        </div>
+        <div><a class="btn btn-solid" href="tel:+17072673690">Call now</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. PROCESS ============ -->
+  <section id="process" class="process">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>Free estimate first, price agreed before we start.</h2>
+      <p class="section-intro">No surprises on the invoice. You know the number before anyone picks up a tool.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="n">01</div>
+          <h3>Call any hour</h3>
+          <p>Tell us what the system is doing — or not doing. We'll say what it sounds like and when we can get out to you.</p>
+        </div>
+        <div class="step">
+          <div class="n">02</div>
+          <h3>Free estimate</h3>
+          <p>We look at the actual system, diagnose the real fault, and give you the price in writing. The estimate costs nothing.</p>
+        </div>
+        <div class="step">
+          <div class="n">03</div>
+          <h3>Fixed and tested</h3>
+          <p>The work gets done and the system tested before we leave. You see it running properly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. WORK ============ -->
+  <section id="work">
+    <div class="wrap">
+      <p class="eyebrow">The work</p>
+      <h2>Systems that keep Lake County comfortable.</h2>
+      <p class="section-intro">From a unit swapped out in an afternoon to a whole home running right through summer and winter.</p>
+      <div class="work-grid">
+        <figure class="shot">
+          <img src="img/unit-install.jpg" alt="Installed HVAC unit with wiring and controls at a property" loading="lazy">
+          <figcaption>Unit installation &amp; hook-up</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/hero-hvac.jpg" alt="Technician working on an outdoor unit's electrical connections" loading="lazy">
+          <figcaption>Diagnosis &amp; repair</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/thermostat.jpg" alt="Smart thermostat mounted on a wall showing the set temperature" loading="lazy">
+          <figcaption>Controls &amp; thermostats</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/home-comfort.jpg" alt="Comfortable living room interior" loading="lazy">
+          <figcaption>Even heat, room to room</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/hvac-outdoor.jpg" alt="Open-plan kitchen and living space kept at an even temperature" loading="lazy">
+          <figcaption>Whole-home comfort</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/logo.jpg" alt="GSW Heating and Air badge — licensed 1122268, bonded, established 2024" loading="lazy">
+          <figcaption>Licensed, bonded, local</figcaption>
+        </figure>
+      </div>
+      <p class="fine">The installation photo is GSW's own. Others illustrate the type of work offered &mdash; more job photos coming soon.</p>
+    </div>
+  </section>
+
+  <!-- ============ 6. LICENSED ============ -->
+  <section id="licensed" class="licensed">
+    <div class="wrap">
+      <p class="eyebrow">Licensed, bonded &amp; insured</p>
+      <h2>Check the license before you let anyone touch your system.</h2>
+      <div class="lic-wrap">
+        <div class="lic-card">
+          <img src="img/logo.jpg" alt="GSW Heating and Air badge">
+          <div class="num">1122268</div>
+          <div class="lbl">CSLB license number</div>
+          <div class="sub">C-20 &mdash; Warm-Air Heating,<br>Ventilating &amp; Air-Conditioning<br>Active &middot; $25,000 bond</div>
+          <a href="https://www.cslb.ca.gov/onlineservices/checklicenseII/checklicense.aspx" rel="noopener">Verify at cslb.ca.gov &rarr;</a>
+        </div>
+        <div>
+          <p>California requires a contractor's license for any HVAC job over $500 in labor and materials. Plenty of people working on Lake County systems do not hold one &mdash; and a botched install shows up as a wrecked compressor or a gas fault later.</p>
+          <ul class="checks">
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Active C-20 license</strong> — the classification specific to heating and air conditioning.</span></li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>$25,000 contractor's bond</strong> on file with the state.</span></li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Workers' compensation insurance</strong> carried for our crew — many one-person outfits carry none, which leaves the homeowner exposed.</span></li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Free estimates</strong> — know the price before any work begins.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. AREAS &amp; HOURS ============ -->
+  <section id="areas">
+    <div class="wrap info-grid">
+      <div>
+        <p class="eyebrow">Where we work</p>
+        <h2>Nice and all of Lake County.</h2>
+        <p class="section-intro">Based in Nice on Lakeshore Boulevard, covering the communities around Clear Lake.</p>
+        <div class="area-grid">
+          <div class="area">Nice</div>
+          <div class="area">Lucerne</div>
+          <div class="area">Upper Lake</div>
+          <div class="area">Lakeport</div>
+          <div class="area">Clearlake</div>
+          <div class="area">Kelseyville</div>
+        </div>
+        <p class="fine">Elsewhere in Lake County? Call and ask &mdash; if we can get there, we will.</p>
+      </div>
+      <div>
+        <div class="side-card">
+          <h3>Hours</h3>
+          <div class="always"><span aria-hidden="true"></span> Open 24 hours</div>
+          <p>Every day of the week, including weekends and holidays. HVAC failures do not keep office hours, and neither do we.</p>
+        </div>
+        <div class="side-card">
+          <h3>Payment</h3>
+          <p>Cash, credit cards, Zelle and Venmo accepted.</p>
+          <div class="pay">
+            <span>Cash</span><span>Credit cards</span><span>Zelle</span><span>Venmo</span>
+          </div>
+        </div>
+        <div class="side-card">
+          <h3>Get in touch</h3>
+          <p>Call or text <a href="tel:+17072673690">(707) 267-3690</a><br>
+          Serving Nice, CA and Lake County</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. CONTACT ============ -->
+  <section id="contact" class="contact-band">
+    <div class="wrap">
+      <p class="eyebrow">Here to help you</p>
+      <h2>Get your free estimate.</h2>
+      <p class="section-intro">Heating, cooling, a system on its last legs or one that just quit — call any hour and we'll tell you what it takes.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="tel:+17072673690">Call (707) 267-3690</a>
+        <a class="btn btn-ghost" href="sms:+17072673690">Send a text</a>
+      </div>
+      <p class="fine">Open 24 hours, 7 days &middot; Nice &amp; Lake County, CA &middot; CSLB #1122268</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <img src="img/logo.jpg" alt="GSW Heating and Air">
+    <p>Licensed C-20 HVAC Contractor &middot; Nice, California &amp; Lake County</p>
+    <p><a href="tel:+17072673690">(707) 267-3690</a></p>
+    <p>California CSLB license #1122268 &middot; bonded &amp; insured</p>
+    <p class="fineprint">License number, classification, bond and workers' compensation status are public record with the California Contractors State License Board and can be verified at cslb.ca.gov. Service list and payment methods as published by the business on Yelp. Some photographs illustrate the type of work offered rather than specific completed jobs.</p>
+  </div>
+</footer>
+
+</body>
+</html>
